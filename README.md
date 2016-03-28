@@ -1,8 +1,8 @@
-# Homework 3 - *Name of App*
+# Homework 3 - *Tickets*
 
-**Name of your app** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
+**Tickets** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
 
-Submitted by: **Your Name Here**
+Submitted by: **Tran Duc Huy**
 
 Time spent: **X** hours
 
@@ -18,18 +18,18 @@ The following **required** functionality is complete:
 
 #### Events
 
-* [ ] Users can see a list of upcoming events. Past events should not be shown. **HINT**: Good candidate for a test.
-* [ ] Users can search for events from the homepage.
-* [ ] Users can click on an event to see details about the event. 
-* [ ] Users can click on "Book Now" to go to a page to purchase tickets.
+* [x] Users can see a list of upcoming events. Past events should not be shown. **HINT**: Good candidate for a test.
+* [x] Users can search for events from the homepage.
+* [x] Users can click on an event to see details about the event. 
+* [x] Users can click on "Book Now" to go to a page to purchase tickets.
 
 #### Tickets
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`. 
-* [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
-* [ ] Users can only buy up to 10 of a ticket type at a time.
-* [ ] Users cannot buy tickets to events that occur in the past. 
+* [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
+* [x] Users cannot buy more tickets than the quantity available.
+* [x] Users can only buy up to 10 of a ticket type at a time.
+* [x] Users cannot buy tickets to events that occur in the past. 
 
 #### Users
 
@@ -59,7 +59,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2016 Tran Duc Huy
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
