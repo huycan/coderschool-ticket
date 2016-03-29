@@ -2,12 +2,17 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-
+User.delete_all
 TicketType.delete_all
 Event.delete_all
 Venue.delete_all
 Category.delete_all
 Region.delete_all
+
+
+@user = User.new(email: "a@z.com", password: "1", password_confirmation: "1")
+@user.save(validate: false)
+User.new(email: "b@z.com", password: "2", password_confirmation: "2").save(validate: false)
 
 
 # Create Regions
@@ -35,6 +40,7 @@ e = Event.create({
   venue: dalat,
   category: Category.find_by(name: 'Everything Else'),
   hero_image_url: 'https://az810747.vo.msecnd.net/eventcover/2015/10/25/C6A1A5.jpg?w=1040&maxheight=400&mode=crop&anchor=topcenter',
+  user_id: @user.id,
   extended_html_description: <<-DESC
     <p style="text-align:center"><span style="font-size:20px">VIỆT NAM THỬ THÁCH CHIẾN THẮNG 2016</span></p>
     <p style="text-align:center"><span style="font-size:20px">Giải đua xe đạp địa hình 11-13/03/2016</span></p>
@@ -63,6 +69,7 @@ e = Event.create({
   starts_at: Faker::Time.between(1.days.ago.utc, 1.days.from_now.utc, :all),
   ends_at: Faker::Time.between(2.days.ago.utc, 3.days.from_now.utc, :night),  
   hero_image_url: 'https://az810747.vo.msecnd.net/eventcover/2015/12/11/C68636.jpg?w=1040&maxheight=400&mode=crop&anchor=topcenter',
+  user_id: @user.id,
   extended_html_description: <<-DESC
   <p style="text-align:justify"> </p>
 
@@ -146,6 +153,7 @@ e = Event.create({
   venue: gap,
   category: Category.find_by(name: 'Entertainment'),
   hero_image_url:'https://az810747.vo.msecnd.net/eventcover/2015/12/12/78534E.jpg?w=1040&maxheight=400&mode=crop&anchor=topcenter',
+  user_id: @user.id,
   extended_html_description: <<-DESC
          <p>
   <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">* Bạn một m&igrave;nh, bạn FA ?</span><br />

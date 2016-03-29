@@ -4,7 +4,7 @@
 
 Submitted by: **Tran Duc Huy**
 
-Time spent: **1.5** hours
+Time spent: **1.5 + 3** hours
 
 URL: **Insert your Heroku URL here**
 
@@ -38,8 +38,8 @@ The following **required** functionality is complete:
 * [ ] Users can create ticket types for that event. 
 * [x] Users can create venues.
 * [ ] An event must have at least one `ticket_type` defined before it can be published. 
-* [ ] User can see a list of events he or she has created.
-* [ ] Users can edit their event after creation. But only the user who created the event can edit the event. 
+* [x] User can see a list of events he or she has created.
+* [x] Users can edit their event after creation. But only the user who created the event can edit the event. 
 
 ### Optional Stories
 
