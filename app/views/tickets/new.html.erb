@@ -32,7 +32,7 @@
           <tr>
             <td> <%= type.name %> </td>
             <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
-            <td> <%= select :ticket_type, type.id, options_for_select(0..10) %></td> 
+            <td> <%= select :ticket_type, type.id, options_for_select(0..type.allowed_quantity?) %></td> 
           </tr>
           <% end %> 
         </table>

@@ -9,4 +9,9 @@ class TicketType < ActiveRecord::Base
   def buyable? quantity
     self.remaining? >= quantity
   end
+
+  def allowed_quantity?
+    max_quantity = 10
+    [max_quantity, self.remaining?].min
+  end
 end
