@@ -1,0 +1,12 @@
+<% unless object[:data].errors.empty? %>
+  <div class="row">
+    <h5>
+      <%= pluralize(object[:data].errors.count, "error") %> prevented <%= object[:name] %>
+    </h5>
+    <ul>
+      <% object[:data].errors.full_messages.each do |msg| %>
+      	<li><%= msg %><br/></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

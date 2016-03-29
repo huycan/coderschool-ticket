@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @events = Event.upcoming
@@ -11,5 +11,17 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+  end
+
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
+  def update
   end
 end

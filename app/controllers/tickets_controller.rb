@@ -1,6 +1,5 @@
 class TicketsController < ApplicationController
-  before_action :set_event, only: [:new, :create]
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, :set_event
 
   def new
   end

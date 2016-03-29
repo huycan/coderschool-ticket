@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :venues, only: [:new, :create]
+
   devise_for :users
   root 'events#index'
 

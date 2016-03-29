@@ -1,12 +1,12 @@
 <nav class="navbar navbar-dark bg-inverse">
-<%= link_to 'Tickets', root_path, class: 'navbar-brand' %>
+  <%= link_to 'Tickets', root_path, class: 'navbar-brand' %>
   <ul class="nav navbar-nav">
     <% if user_signed_in? %>
       <li class="nav-item">
-        <a class="nav-link" href="#">Venues</a>
+        <%= link_to 'Venues', new_venue_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Events</a>
+        <%= link_to 'Events', new_event_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
