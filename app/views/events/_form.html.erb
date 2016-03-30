@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <h2>Event</h2>
+    <%= render('layouts/error', object: { data: @event, name: 'creating event' }) if @event %>
+
+    <%= form_for @event, url: events_path do |f| %>
+      <div class="form-group">
+      	<%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    	
+    	<div class="form-group">
+    		<%= f.label :venue %>
+    		<br/>
+    		<%= select :event, :venue_id, Venue.all.collect { |r| [r.name, r.id] }, class: 'c-select' %>
+    	</div>
+
+      <div class="form-group">
+        <%= f.label :category %>
+        <br/>
+        <%= select :event, :category_id, Category.all.collect { |c| [c.name, c.id] }, class: 'c-select' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :starts_at %>
+        <%= datetime_select :event, :starts_at, default: Time.now %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ends_at %>
+        <%= datetime_select :event, :ends_at, default: 1.days.from_now %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :hero_image_url %>
+        <%= f.text_field :hero_image_url, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :extended_html_description %>
+        <br />
+        <%= text_area :event, :extended_html_description, size: "10x5", class: 'form-control' %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br/>
+
+<div class="container">
+  <%= render 'ticket_types/form' %>
+</div>

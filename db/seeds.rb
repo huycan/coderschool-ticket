@@ -2,9 +2,10 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-User.delete_all
+
 TicketType.delete_all
 Event.delete_all
+User.delete_all
 Venue.delete_all
 Category.delete_all
 Region.delete_all
