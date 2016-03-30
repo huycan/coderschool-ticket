@@ -6,7 +6,7 @@ Submitted by: **Tran Duc Huy**
 
 Time spent: **10** hours
 
-URL: **not yet**, will be pushed to heroku soon
+URL: **https://floating-sands-24190.herokuapp.com/**
 
 ## User Stories
 
