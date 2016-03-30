@@ -3,6 +3,7 @@
 #
 
 
+Ticket.delete_all
 TicketType.delete_all
 Event.delete_all
 User.delete_all
