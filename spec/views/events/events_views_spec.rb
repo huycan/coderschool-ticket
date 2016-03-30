@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "events/index", :type => :view do
+  login_user
   before do
-      @user = User.new(email: "a@b.c", password: "1", password_confirmation: "1")
-      @user.save(validate: false)
+      @user = User.find_by email: "a@b.c"
       User.new(email: "x@y.z", password: "2", password_confirmation: "2").save(validate: false)
 
       # Create Regions

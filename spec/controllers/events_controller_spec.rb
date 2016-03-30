@@ -4,8 +4,6 @@ RSpec.describe EventsController, type: :controller do
   login_user
 
   before do
-    # @user1 = User.new(email: "a@b.c", password: "1", password_confirmation: "1")
-    # @user1.save(validate: false)
     @user1 = User.find_by email: "a@b.c"
 
     @user2 = User.new(email: "x@y.z", password: "1", password_confirmation: "1")
