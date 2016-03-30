@@ -6,6 +6,9 @@
         <% if user_signed_in? %>
           <%= link_to 'Show', event_path(event), class: 'btn btn-success' %>
           <% if event.user.id == current_user.id %>
+            <% if !event.published %>
+              <%= link_to 'Publish', publish_event_path(event), method: :post, class: "btn btn-primary #{event.publishable? ? '' : 'disabled'}" %>
+            <% end %>
             <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-secondary' %>
           <% end %>
         <% end %>

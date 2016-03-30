@@ -11,9 +11,9 @@ Category.delete_all
 Region.delete_all
 
 
-@user = User.new(email: "a@z.com", password: "1", password_confirmation: "1")
+@user = User.new(email: "a@b.c", password: "1", password_confirmation: "1")
 @user.save(validate: false)
-User.new(email: "b@z.com", password: "2", password_confirmation: "2").save(validate: false)
+User.new(email: "x@y.z", password: "2", password_confirmation: "2").save(validate: false)
 
 
 # Create Regions
@@ -36,6 +36,7 @@ dalat = Venue.create({
 
 e = Event.create({
   name: 'Việt Nam Thử Thách Chiến Thắng', 
+  published: true,
   starts_at: Faker::Time.between(1.days.from_now.utc, 5.days.from_now.utc, :all),
   ends_at: Faker::Time.between(7.days.from_now.utc, 12.days.from_now.utc, :all),
   venue: dalat,
@@ -65,6 +66,7 @@ dan_venue = Venue.create({
 
 e = Event.create({
   name: 'Cảm ơn Đời - Live Concert Đan Trường', 
+  published: true,
   venue: dan_venue,
   category: Category.find_by(name: 'Entertainment'),
   starts_at: Faker::Time.between(1.days.ago.utc, 1.days.from_now.utc, :all),
@@ -149,6 +151,7 @@ gap = Venue.create({
 
 e = Event.create({
   name: 'Merry Christmas Never Alone',
+  published: true,
   starts_at: Faker::Time.backward(24, :evening),
   ends_at: Faker::Time.forward(12, :midnight),
   venue: gap,

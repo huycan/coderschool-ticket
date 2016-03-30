@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_event, only: [:show, :edit]
+  before_action :set_event, only: [:show, :edit, :publish, :update]
 
   def index
-    @events = Event.upcoming
+    @events = Event.viewable(!!current_user ? current_user.id : nil).upcoming
 
     if params[:search].present?
       @events = @events.search params[:search]  
@@ -32,6 +32,17 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event.update event_params
+    redirect_to root_path
+  end
+
+  def publish
+    if @event.publishable?
+      @event.publish!
+      @event.save
+    end
+
+    redirect_to root_path
   end
 
   private

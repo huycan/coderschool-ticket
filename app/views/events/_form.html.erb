@@ -3,7 +3,7 @@
     <h2>Event</h2>
     <%= render('layouts/error', object: { data: @event, name: 'creating event' }) if @event %>
 
-    <%= form_for @event, url: events_path do |f| %>
+    <%= form_for @event do |f| %>
       <div class="form-group">
       	<%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
@@ -49,8 +49,10 @@
   </div>
 </div>
 
+<% if params[:action] == 'edit' %>
 <br/>
 
 <div class="container">
   <%= render 'ticket_types/form' %>
 </div>
+<% end %>

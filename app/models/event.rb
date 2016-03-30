@@ -13,7 +13,17 @@ class Event < ActiveRecord::Base
     where 'name ilike :query or extended_html_description ilike :query', query: "%#{ query }%" 
   }
 
+  scope :viewable, ->(user_id) { where("published=true or user_id = ?", user_id) }
+
   def is_upcoming?
     self[:starts_at] > Time.now.utc
+  end
+
+  def publishable?
+    self.ticket_types.count > 0
+  end
+
+  def publish!
+    self[:published] = true
   end
 end

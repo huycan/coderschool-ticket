@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root 'events#index'
 
   resources :events do
+    member do
+      post 'publish', to: 'events#publish'
+    end
     resources :tickets
     resources :ticket_types, only: [:create]
   end
