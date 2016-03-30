@@ -4,15 +4,15 @@
 
 Submitted by: **Tran Duc Huy**
 
-Time spent: **1.5 + 3 + 2** hours
+Time spent: **9** hours
 
-URL: **Insert your Heroku URL here**
+URL: **not yet**, will be pushed to heroku soon
 
 ## User Stories
 
 The following **required** functionality is complete:
 
-* [ ] 10 model tests, 2 route tests, 2 controller tests, 2 view tests.
+* [x] 10 model tests, 2 route tests, 2 controller tests, 2 view tests.
 
 #### Events
 
